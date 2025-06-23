@@ -7,22 +7,27 @@ const sections = [
   {
     title: '1단계: 제품 데이터 수집',
     text: '웹사이트, 앱, POS 등 다양한 채널에서 사용자 행동과 상품 정보를 실시간으로 수집합니다.',
+    bg: '/images/bg-1.png',
   },
   {
     title: '2단계: 데이터 전처리 및 분석',
     text: '수집된 원시 데이터를 정제(cleaning)하고, 특징(feature) 추출을 통해 분석에 적합한 형태로 변환합니다.',
+    bg: '/images/bg-1.png',
   },
   {
     title: '3단계: AI 모델 학습',
     text: 'LightFM, 딥러닝 등의 알고리즘으로 사용자·상품 임베딩을 학습하여 개인화 추천 모델을 구축합니다.',
+    bg: '/images/bg-1.png',
   },
   {
     title: '4단계: 추천 생성 및 검증',
     text: '실시간 또는 배치 방식으로 추천 리스트를 생성하고, A/B 테스트로 추천 품질을 검증합니다.',
+    bg: '/images/bg-1.png',
   },
   {
     title: '5단계: 추천 결과 노출',
     text: '웹/앱 UI에 개인별 추천 상품을 노출하여, 클릭·구매 전환을 최적화합니다.',
+    bg: '/images/bg-1.png',
   },
 ]
 
@@ -46,8 +51,8 @@ export default function HomePage() {
         scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100
       "
       >
-        {sections.map(({ title, text }, i) => (
-            <Section key={i} title={title} text={text} />
+        {sections.map(({ title, text, bg }, i) => (
+            <Section key={i} title={title} text={text} bg={bg} />
         ))}
       </main>
   )
@@ -56,9 +61,11 @@ export default function HomePage() {
 function Section({
                    title,
                    text,
+                   bg,
                  }: {
   title: string
   text: string
+  bg: string
 }) {
   const [ref, inView] = useInView({
     threshold: 0.4,
@@ -67,8 +74,9 @@ function Section({
 
   return (
       <section
-          ref={ref}
-          className="snap-start flex items-center justify-center h-screen bg-gray-50 dark:bg-gray-900"
+        ref={ref}
+        className="snap-start flex items-center justify-center h-screen bg-cover bg-center"
+        style={{ backgroundImage: `url(${bg})`, }}
       >
         <motion.div
             className="max-w-2xl p-8 text-center space-y-4"

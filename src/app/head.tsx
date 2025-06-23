@@ -3,6 +3,11 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
     title: '내 서비스명 – 메인',
     description: '여기는 내 서비스 소개 문구입니다.',
+    icons: {
+        icon: '/favicon.png',
+        shortcut: '/favicon.png',
+        apple: '/favicon.png',
+    },
     openGraph: {
         title: '내 서비스명',
         description: '서비스 설명',

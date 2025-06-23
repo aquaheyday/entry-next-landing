@@ -14,10 +14,10 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="ko">                   {/* 기본 언어를 ko 로 둡니다 */}
+        <html lang="ko">
         <HeadMeta />
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Header />        {/* 전역 헤더 */}
+        <Header />
         <main>{children}</main>
         <Footer />
         </body>
